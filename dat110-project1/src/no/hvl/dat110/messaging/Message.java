@@ -34,16 +34,21 @@ public class Message {
 		}
 		
 		return encoded;
-		
 	}
-
+	
+	
 	public void decapsulate(byte[] received) {
 
 		// TODO
 		// decapsulate the data contained in the received byte array and store it 
 		// in the payload of this message
 		
-		throw new UnsupportedOperationException(TODO.method());
+		this.payload = new byte[received[0]];
+		for (int i = 0; i < received[0]; i++) {
+			this.payload[i]=received[i+1];
+		}
+		
+		
 		
 	}
 }
