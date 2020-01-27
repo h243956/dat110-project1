@@ -22,15 +22,17 @@ public class Message {
 
 	public byte[] encapsulate() {
 		
-		byte[] encoded = null;
-		
 		// TODO
 		// encapulate/encode the payload of this message in the
 		// encoded byte array according to message format
 		
-		if (true)
-		   throw new UnsupportedOperationException(TODO.method());
-
+		byte[] encoded = new byte[128];
+		encoded[0]=(byte)this.payload.length;
+		
+		for (int i = 0; i < this.payload.length; i++) {
+			encoded[i+1]=this.payload[i];
+		}
+		
 		return encoded;
 		
 	}
