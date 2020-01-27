@@ -13,7 +13,7 @@ public class Connection {
 	private DataInputStream inStream; // for reading bytes from the underlying TCP connection
 	private Socket socket; // socket for the underlying TCP connection
 
-	public Connection(Socket socket) {
+	public Connection(Socket socket) { // test
 
 		try {
 
