@@ -42,7 +42,7 @@ public class Connection {
 			ex.printStackTrace();
 		}
 		
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
 
 	}
 
