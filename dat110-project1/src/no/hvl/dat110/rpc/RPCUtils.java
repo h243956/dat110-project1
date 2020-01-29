@@ -16,10 +16,20 @@ public class RPCUtils {
 		byte[] encoded;
 
 		// TODO: marshall RPC identifier and string into byte array
-
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
+		
+		byte[] text = str.getBytes();
+		
+		encoded = new byte[str.getBytes().length + 1];
+		
+		encoded[0] = rpcid;
+		
+		for(int i = 0; i < str.getBytes().length; i++) {
+			encoded[i+1] = str.getBytes()[i];
 		}
+		
+		/*if (true) {
+			throw new UnsupportedOperationException(TODO.method());
+		}*/
 
 		return encoded;
 	}
@@ -30,9 +40,11 @@ public class RPCUtils {
 
 		// TODO: unmarshall String contained in data into decoded
 
-		if (true) {
+		decoded = new String(Arrays.copyOfRange(data, 1, data.length)); 
+		
+		/*if (true) {
 			throw new UnsupportedOperationException(TODO.method());
-		}
+		}*/
 
 		return decoded;
 	}
