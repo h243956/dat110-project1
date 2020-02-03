@@ -20,12 +20,15 @@ public class RPCUtils {
 		
 		byte[] text = str.getBytes();
 		//under kan vi vel bruke byte-arrayet "text" i staden for str.getBytes()?
-		encoded = new byte[str.getBytes().length + 1];
-		
+		//encoded = new byte[str.getBytes().length + 1];
+		encoded = new byte[text.length + 1];
 		encoded[0] = rpcid;
 		
-		for(int i = 0; i < str.getBytes().length; i++) {
+		/*for(int i = 0; i < str.getBytes().length; i++) {
 			encoded[i+1] = str.getBytes()[i];
+		}*/
+		for(int i = 0; i < text.length; i++) {
+			encoded[i+1] = text[i];
 		}
 		
 		/*if (true) {
