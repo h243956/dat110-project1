@@ -20,7 +20,6 @@ public class RPCClient {
 	public void connect() {
 		
 		// TODO: connect using the underlying messaging layer connection
-		
 	    throw new UnsupportedOperationException(TODO.method());
 			
 	}
