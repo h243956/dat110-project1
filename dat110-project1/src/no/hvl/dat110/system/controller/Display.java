@@ -18,6 +18,5 @@ public class Display extends RPCStub {
 		
 		RPCUtils.unmarshallString(response);
 
-		throw new UnsupportedOperationException(TODO.method());
 	}
 }
