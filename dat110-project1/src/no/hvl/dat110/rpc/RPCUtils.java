@@ -116,7 +116,7 @@ public class RPCUtils {
 
 		int decoded;
 		byte[] decdata = new byte[data.length - 1];
-		for(int i = 0; i < data.length - 1; i++) {
+		for(int i = 0; i < decdata.length; i++) {
 			decdata[i] = data[i + 1];
 		}
 		decoded = new BigInteger(decdata).intValue();
