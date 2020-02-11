@@ -1,5 +1,7 @@
 package no.hvl.dat110.system.sensor;
 
+import java.util.Random;
+
 import no.hvl.dat110.rpc.RPCImpl;
 import no.hvl.dat110.rpc.RPCUtils;
 
@@ -9,11 +11,22 @@ public class SensorImpl implements RPCImpl {
 
 	public int read() {
 
-		long seconds = System.currentTimeMillis();
+//		long seconds = System.currentTimeMillis();
+//		double temp = RANGE * Math.sin(seconds / 1000);
+//		
+//		try {
+//			Thread.sleep(1500);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		// la inn en random gen for å få ulike "temperaturer"
+		// implementasjonen kunne gi samme temp og gi feil bilde av korleis det funka
+		Random r = new Random();
+		int random = r.nextInt(50) - 20;
 
-		double temp = RANGE * Math.sin(seconds / 1000);
-
-		return (int) Math.ceil(temp);
+		return random;
 	}
 	
 	public byte[] invoke(byte[] request) {
@@ -24,7 +37,7 @@ public class SensorImpl implements RPCImpl {
 		
 		byte rpcid = request[0];
 		
-		byte[] reply = RPCUtils.marshallInteger(rpcid,temp); 
+		byte[] reply = RPCUtils.marshallInteger(rpcid,temp);
 		
 		return reply;
 	}
